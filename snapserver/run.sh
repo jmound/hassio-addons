@@ -18,6 +18,11 @@ echo B
 # Start creation of configuration
 
 echo "[stream]" > "${config}"
+echo G
+echo $(bashio::config 'stream.streams')
+echo H
+echo $(bashio::config 'stream')
+echo I
 for stream in $(bashio::config 'stream.streams'); do
     echo "stream = ${stream}" >> "${config}"
 done
