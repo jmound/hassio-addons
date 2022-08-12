@@ -1,5 +1,8 @@
 ARG BUILD_FROM
-FROM $BUILD_FROM
+#FROM $BUILD_FROM
+
+FROM maxmcd/gstreamer:1.14-alpine
+
 
 # Add env
 ENV LANG C.UTF-8
@@ -7,7 +10,7 @@ ENV LANG C.UTF-8
 #Install snapcast
 RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories && apk add --no-cache snapcast bash
 
-RUN apk add gstreamer
+#RUN apk add gstreamer
 
 
 # Copy data for add-on
