@@ -11,6 +11,10 @@ if ! bashio::fs.file_exists '/etc/snapserver.conf'; then
 fi
 bashio::log.info "Populating snapserver.conf..."
 
+echo A
+cat /etc/snapserver.conf
+echo B
+
 # Start creation of configuration
 
 echo "[stream]" > "${config}"
@@ -39,5 +43,9 @@ echo "[server]" >> "${config}"
 echo "datadir = $(bashio::config 'server.datadir')" >> "${config}"
 
 bashio::log.info "Starting SnapServer..."
+
+echo C
+cat /etc/snapserver.conf
+echo D
 
 /usr/bin/snapserver -c /etc/snapserver.conf
