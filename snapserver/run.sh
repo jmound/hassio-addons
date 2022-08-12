@@ -21,6 +21,12 @@ echo "[stream]" > "${config}"
 for stream in $(bashio::config 'stream.streams'); do
     echo "stream = ${stream}" >> "${config}"
 done
+echo E
+echo $(bashio::config 'stream.buffer')
+echo $(bashio::config 'stream')
+
+echo F
+
 echo "buffer = $(bashio::config 'stream.buffer')" >> "${config}"
 echo "codec = $(bashio::config 'stream.codec')" >> "${config}"
 echo "send_to_muted = $(bashio::config 'stream.send_to_muted')" >> "${config}"
